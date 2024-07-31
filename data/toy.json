@@ -65,16 +65,6 @@
         "inStock": true
     },
     {
-        "_id": "t114",
-        "name": "Racing Car Set",
-        "price": 70,
-        "labels": [
-            "On wheels"
-        ],
-        "createdAt": 1631044801011,
-        "inStock": false
-    },
-    {
         "_id": "t106",
         "name": "Dancing Robot",
         "price": 65,
