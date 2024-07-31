@@ -1,109 +1,62 @@
-import path from 'path';
-import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
+import express from 'express'
+import cookieParser from 'cookie-parser'
+import cors from 'cors'
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-import { loggerService } from './services/logger.service.js';
-import { toyService } from './services/toy.service.js';
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-const app = express();
+import { logger } from './services/logger.service.js'
+logger.info('server.js loaded...')
 
-const corsOptions = {
-  origin: [
-    'http://127.0.0.1:8080',
-    'http://localhost:8080',
+const app = express()
 
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
+// Express App Config
+app.use(cookieParser())
+app.use(express.json())
+app.use(express.static('public'))
 
-    'http://localhost:5174',
-    'http://127.0.0.1:5174',
-  ],
-  credentials: true,
-};
+if (process.env.NODE_ENV === 'production') {
+  // Express serve static files on production environment
+  app.use(express.static(path.resolve(__dirname, 'public')))
+  console.log('__dirname: ', __dirname)
+} else {
+  // Configuring CORS
+  // Make sure origin contains the url 
+  // your frontend dev-server is running on
+  const corsOptions = {
+    origin: [
+      'http://127.0.0.1:5173',
+      'http://localhost:5173',
 
-// App Configuration
-app.use(express.static('public'));
-app.use(cookieParser()); // for res.cookies
-app.use(express.json()); // for req.body
-app.use(cors(corsOptions));
-
-// **************** Toys API ****************:
-// GET toys
-app.get('/api/toy', async (req, res) => {
-  try {
-    const { filterBy = {}, sortBy = {}, pageIdx } = req.query;
-    const toys = await toyService.query(filterBy, sortBy, pageIdx);
-    res.send(toys);
-  } catch (err) {
-    loggerService.error('Cannot load toys', err);
-    res.status(400).send('Cannot load toys');
+      'http://127.0.0.1:3000',
+      'http://localhost:3000',
+    ],
+    credentials: true
   }
-});
+  app.use(cors(corsOptions))
+}
 
-app.get('/api/toy/:toyId', async (req, res) => {
-  try {
-    const { toyId } = req.params;
-    const toy = await toyService.get(toyId);
-    res.send(toy);
-  } catch (err) {
-    loggerService.error('Cannot get toy', err);
-    res.status(400).send(err.message || 'Cannot get toy');
-  }
-});
+import { authRoutes } from './api/auth/auth.routes.js'
+import { userRoutes } from './api/user/user.routes.js'
+import { toyRoutes } from './api/toy/toy.routes.js'
 
-app.post('/api/toy', async (req, res) => {
-  try {
-    const { name, price, labels } = req.body;
-    const toy = {
-      name,
-      price: +price,
-      labels,
-    };
-    const savedToy = await toyService.save(toy);
-    res.send(savedToy);
-  } catch (err) {
-    loggerService.error('Cannot add toy', err);
-    res.status(400).send('Cannot add toy');
-  }
-});
+// routes
+app.use('/api/auth', authRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/toy', toyRoutes)
 
-app.put('/api/toy', async (req, res) => {
-  try {
-    const { name, price, _id, labels } = req.body;
-    const toy = {
-      _id,
-      name,
-      price: +price,
-      labels,
-    };
-    const savedToy = await toyService.save(toy);
-    res.send(savedToy);
-  } catch (err) {
-    loggerService.error('Cannot update toy', err);
-    res.status(400).send('Cannot update toy');
-  }
-});
+// Make every unmatched server-side-route fall back to index.html
+// So when requesting http://localhost:3030/index.html/toy/123 it will still respond with
+// our SPA (single page app) (the index.html file) and allow vue-router to take it from there
 
-app.delete('/api/toy/:toyId', async (req, res) => {
-  try {
-    const { toyId } = req.params;
-    const msg = await toyService.remove(toyId);
-    res.send({ msg, toyId });
-  } catch (err) {
-    loggerService.error('Cannot delete toy', err);
-    res.status(400).send('Cannot delete toy, ' + err.message || 'Unknown error');
-  }
-});
-
-// Fallback
 app.get('/**', (req, res) => {
-  res.sendFile(path.resolve('public/index.html'));
-});
+  res.sendFile(path.resolve('public/index.html'))
+})
 
-// Listen will always be the last line in our server!
-const port = 3030;
+const port = process.env.PORT || 3030
+
 app.listen(port, () => {
-  loggerService.info(`Server listening on port http://127.0.0.1:${port}/`);
-});
-
+  logger.info('Server is running on port: ' + port)
+})
