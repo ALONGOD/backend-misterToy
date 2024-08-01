@@ -1,154 +1,223 @@
 [
     {
-        "name": "Talking Doll",
-        "price": 123,
-        "labels": [
-            "Doll",
-            "Battery Powered",
-            "Baby"
-        ],
-        "createdAt": 1631031801011,
-        "inStock": false
-    },
-    {
-        "name": "Outdoor Playhouse",
-        "price": 1000,
-        "labels": [
-            "Outdoor"
-        ],
-        "createdAt": 1631047801011,
-        "inStock": true
-    },
-    {
-        "name": "Remote Control Helicopter",
-        "price": 95,
-        "labels": [
-            "Battery Powered",
-            "Outdoor"
-        ],
-        "createdAt": 1631040801011,
-        "inStock": false
-    },
-    {
-        "name": "Electronic Drum Kit",
-        "price": 85,
-        "labels": [
-            "Battery Powered"
-        ],
-        "createdAt": 1631046801011,
-        "inStock": false
-    },
-    {
-        "name": "Remote Control Car",
-        "price": 79,
+        "name": "Race Car",
+        "price": 89,
         "labels": [
             "On wheels",
-            "Battery Powered",
-            "Outdoor"
-        ],
-        "createdAt": 1631033801011,
-        "inStock": true
-    },
-    {
-        "name": "Wooden Play Kitchen",
-        "price": 75,
-        "labels": [
-            "Baby"
-        ],
-        "createdAt": 1631043801011,
-        "inStock": true
-    },
-    {
-        "name": "Dancing Robot",
-        "price": 65,
-        "labels": [
             "Battery Powered"
         ],
-        "createdAt": 1631036801011,
-        "inStock": true
+        "createdAt": 1631121801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m102",
+                "txt": "Is this car rechargeable?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
     },
     {
-        "name": "Canvas Painting Kit",
-        "price": 55,
-        "labels": [
-            "Art"
-        ],
-        "createdAt": 1631042801011,
-        "inStock": true
-    },
-    {
-        "name": "Wooden Puzzle Set",
-        "price": 50,
+        "name": "Jigsaw Puzzle",
+        "price": 45,
         "labels": [
             "Puzzle",
+            "Art"
+        ],
+        "createdAt": 1631211801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m103",
+                "txt": "How many pieces does it have?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d762",
+                    "fullname": "puka goddard"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Building Blocks",
+        "price": 78,
+        "labels": [
+            "Art",
             "Outdoor"
         ],
-        "createdAt": 1631032801011,
-        "inStock": true
+        "createdAt": 1631301801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m104",
+                "txt": "Are these blocks safe for toddlers?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
     },
     {
-        "name": "Artistic Paint Set",
-        "price": 50,
-        "labels": [
-            "Art"
-        ],
-        "createdAt": 1631035801011,
-        "inStock": true
-    },
-    {
-        "name": "Miniature Train Set",
-        "price": 40,
-        "labels": [
-            "On wheels",
-            "Box game"
-        ],
-        "createdAt": 1631037801011,
-        "inStock": false
-    },
-    {
-        "name": "3D Jigsaw Puzzle",
+        "name": "Stuffed Bear",
         "price": 35,
         "labels": [
-            "Puzzle"
-        ],
-        "createdAt": 1631039801011,
-        "inStock": true
-    },
-    {
-        "name": "Colorful Building Blocks",
-        "price": 30,
-        "labels": [
-            "Baby",
-            "Box game"
-        ],
-        "createdAt": 1631034801011,
-        "inStock": false
-    },
-    {
-        "name": "Educational Alphabet Blocks",
-        "price": 25,
-        "labels": [
+            "Doll",
             "Baby"
         ],
-        "createdAt": 1631041801011,
-        "inStock": false
+        "createdAt": 1631391801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m105",
+                "txt": "Is this bear machine washable?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d762",
+                    "fullname": "puka goddard"
+                }
+            }
+        ]
     },
     {
-        "name": "Soft Plush Teddy Bear",
-        "price": 20,
+        "name": "Outdoor Adventure Kit",
+        "price": 120,
         "labels": [
-            "Baby"
-        ],
-        "createdAt": 1631038801011,
-        "inStock": true
-    },
-    {
-        "name": "Glow-in-the-Dark Stars",
-        "price": 15,
-        "labels": [
+            "Outdoor",
             "Art"
         ],
-        "createdAt": 1631045801011,
-        "inStock": true
+        "createdAt": 1631481801011,
+        "inStock": false,
+        "msgs": [
+            {
+                "id": "m106",
+                "txt": "What’s included in the kit?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Box of Crayons",
+        "price": 18,
+        "labels": [
+            "Art",
+            "Box game"
+        ],
+        "createdAt": 1631571801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m107",
+                "txt": "Are these crayons non-toxic?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d762",
+                    "fullname": "puka goddard"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Remote-Controlled Boat",
+        "price": 150,
+        "labels": [
+            "On wheels",
+            "Battery Powered"
+        ],
+        "createdAt": 1631661801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m108",
+                "txt": "What is the maximum range?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Interactive Globe",
+        "price": 99,
+        "labels": [
+            "Art",
+            "Puzzle"
+        ],
+        "createdAt": 1631751801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m109",
+                "txt": "Does it come with a stand?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d762",
+                    "fullname": "puka goddard"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Magic Drawing Pad",
+        "price": 55,
+        "labels": [
+            "Art",
+            "Battery Powered"
+        ],
+        "createdAt": 1631841801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m110",
+                "txt": "What colors are available?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Toy Drum Set",
+        "price": 95,
+        "labels": [
+            "Art",
+            "Battery Powered"
+        ],
+        "createdAt": 1631931801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m111",
+                "txt": "What type of batteries does it require?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d762",
+                    "fullname": "puka goddard"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Robot Dog",
+        "price": 130,
+        "labels": [
+            "On wheels",
+            "Battery Powered",
+            "Doll"
+        ],
+        "createdAt": 1632021801011,
+        "inStock": true,
+        "msgs": [
+            {
+                "id": "m112",
+                "txt": "Can it perform tricks?",
+                "by": {
+                    "_id": "66ab257a10c903c4a805d761",
+                    "fullname": "Puki Ja"
+                }
+            }
+        ]
     }
 ]
