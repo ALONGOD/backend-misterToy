@@ -14,19 +14,29 @@ export const toyService = {
 	removeToyMsg,
 }
 
-async function query(filterBy = { txt: '' }) {
+async function query(filter = {}, sort = {}, skip = 0, limit = 10) {
 	try {
-		const criteria = {
-			name: { $regex: filterBy.txt, $options: 'i' },
+		// Initialize the criteria with the filter
+		const criteria = { ...filter };
+
+		// If 'inStock' is not specified, remove it from criteria
+		if (!('inStock' in filter)) {
+			delete criteria.inStock;
 		}
-		const collection = await dbService.getCollection('toy')
-		var toys = await collection.find(criteria).toArray()
-		return toys
+
+		const collection = await dbService.getCollection('toy');
+		const toys = await collection.find(criteria)
+			.sort(sort)
+			.skip(skip)
+			.limit(limit)
+			.toArray();
+		return toys;
 	} catch (err) {
-		logger.error('cannot find toys', err)
-		throw err
+		logger.error('Cannot find toys', err);
+		throw err;
 	}
 }
+
 
 async function getById(toyId) {
 	try {
