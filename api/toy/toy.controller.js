@@ -2,7 +2,7 @@ import { toyService } from './toy.service.js'
 import { logger } from '../../services/logger.service.js'
 
 export async function getToys(req, res) {
-    console.log(req.query)
+    // console.log(req.query)
     try {
         const { filterBy = {}, sortBy = {}, pageIdx = '0' } = req.query;
 
