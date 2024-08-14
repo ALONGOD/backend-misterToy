@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "66b8898f21a36253a936bf1e",
+        "byUserId": "66b07bf1c6bfd16b64ed8af4",
+        "toyId": "66ab34de10c903c4a805d775",
+        "txt": "Best toyyyyy ever!",
+        "byUser": {
+            "_id": "66b07bf1c6bfd16b64ed8af4",
+            "username": "kiki",
+            "fullname": "kiki",
+            "score": 0
+        },
+        "toy": {
+            "_id": "66ab34de10c903c4a805d775",
+            "name": "Race Car",
+            "price": 90,
+            "labels": [
+                "On wheels",
+                "Battery Powered"
+            ],
+            "createdAt": 1631121801011,
+            "inStock": true,
+            "msgs": [
+                {
+                    "id": "m102",
+                    "txt": "Is this car rechargeable?",
+                    "by": {
+                        "_id": "66ab257a10c903c4a805d761",
+                        "fullname": "Puki Ja"
+                    }
+                },
+                {
+                    "txt": "Like this toy",
+                    "by": {
+                        "_id": "66b3505fac431e92ee499a72",
+                        "fullname": "alon"
+                    },
+                    "createdAt": 1723028252394,
+                    "id": "bTVld"
+                }
+            ]
+        }
+    }
+]
