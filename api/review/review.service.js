@@ -10,7 +10,7 @@ export const reviewService = {
 }
 
 async function query(filterBy = {}) {
-    console.log(filterBy)
+	// console.log(filterBy)
 	const criteria = {}
 
 	if (filterBy.byUserId) {
@@ -33,9 +33,9 @@ async function query(filterBy = {}) {
 						as: 'byUser',
 					},
 				},
-                {
-                    $unwind: '$byUser',
-                },
+				{
+					$unwind: '$byUser',
+				},
 				{
 					$lookup: {
 						localField: 'toyId',
@@ -44,15 +44,15 @@ async function query(filterBy = {}) {
 						as: 'toy',
 					},
 				},
-                {
-                    $unwind: '$toy',
-                },
-            ]).toArray()
+				{
+					$unwind: '$toy',
+				},
+			]).toArray()
 
-        reviews = reviews.map(review => {
-            delete review.byUser.password
-            return review
-        })
+		reviews = reviews.map(review => {
+			delete review.byUser.password
+			return review
+		})
 		return reviews
 	} catch (err) {
 		logger.error('cannot find reviews', err)

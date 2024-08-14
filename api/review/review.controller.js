@@ -30,7 +30,7 @@ export async function getReviews(req, res) {
         }
 
         const reviews = await reviewService.query(filterBy)
-        console.log(reviews)
+        // console.log(reviews)
         res.send(reviews)
     } catch (err) {
         logger.error('Failed to get reviews', err)
